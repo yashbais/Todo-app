@@ -1,7 +1,17 @@
 import React from "react";
 import CustomButton from "./CustomButton";
 
-const TodoList = ({ tasks, handleDelete }) => {
+interface Task {
+  id: number;
+  taskName: string;
+}
+
+interface TodoListProps {
+  tasks: Task[];
+  handleDelete: (id: number) => void;
+}
+
+const TodoList: React.FC<TodoListProps> = ({ tasks, handleDelete }) => {
   return (
     <div className="mt-6">
       {/* Conditional rendering for empty list */}

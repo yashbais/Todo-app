@@ -3,24 +3,29 @@ import CustomInput from "./CustomInput";
 import CustomButton from "./CustomButton";
 import TodoList from "./TodoList";
 
-const initialTasks = [
+interface Task {
+  id: number;
+  taskName: string;
+}
+
+const initialTasks: Task[] = [
   { id: 1, taskName: "Create project" },
   { id: 2, taskName: "Update documentation" },
 ];
 
-const Layout = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [task, setTask] = useState("");
-  const [tasks, setTasks] = useState(initialTasks);
-  const [error, setError] = useState("");
+const Layout: React.FC = () => {
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [task, setTask] = useState<string>("");
+  const [tasks, setTasks] = useState<Task[]>(initialTasks);
+  const [error, setError] = useState<string>("");
 
   // Handle input change for search
-  const handleSearchChange = (e) => {
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
   };
 
   // Handle input change for new task
-  const handleTaskChange = (e) => {
+  const handleTaskChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTask(e.target.value);
     setError("");
   };
@@ -32,7 +37,7 @@ const Layout = () => {
       return; // Prevent adding the task
     }
 
-    const newTask = {
+    const newTask: Task = {
       id: tasks.length + 1,
       taskName: task,
     };
@@ -41,7 +46,7 @@ const Layout = () => {
   };
 
   // Function to handle deleting a task
-  const handleDelete = (id) => {
+  const handleDelete = (id: number) => {
     setTasks(tasks.filter((task) => task.id !== id));
   };
 

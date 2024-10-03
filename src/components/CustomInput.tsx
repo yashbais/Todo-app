@@ -1,6 +1,22 @@
 import React from "react";
 
-const CustomInput = ({ type, placeholder, value, onChange, name, error }) => {
+interface CustomInputProps {
+  type: string;
+  placeholder: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void; // Type for onChange event
+  name: string;
+  error?: string; // Make error optional
+}
+
+const CustomInput: React.FC<CustomInputProps> = ({
+  type,
+  placeholder,
+  value,
+  onChange,
+  name,
+  error,
+}) => {
   return (
     <div className="mb-4">
       <input
