@@ -4,9 +4,9 @@ interface CustomInputProps {
   type: string;
   placeholder: string;
   value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void; // Type for onChange event
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void; 
   name: string;
-  error?: string; // Make error optional
+  error?: string; 
 }
 
 const CustomInput: React.FC<CustomInputProps> = ({

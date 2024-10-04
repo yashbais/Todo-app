@@ -3,15 +3,15 @@ import React from "react";
 interface CustomButtonProps {
   label: string;
   onClick: () => void;
-  type: "delete" | "add" | "clear" | "default"; // You can specify other types as needed
-  disabled?: boolean; // Make disabled optional
+  type: "delete" | "add" | "clear" | "default";
+  disabled?: boolean; 
 }
 
 const CustomButton: React.FC<CustomButtonProps> = ({
   label,
   onClick,
   type,
-  disabled = false, // Set default value for disabled
+  disabled = false, 
 }) => {
   const buttonStyle =
     type === "delete"

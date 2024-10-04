@@ -13,7 +13,7 @@ interface TodoListProps {
 
 const TodoList: React.FC<TodoListProps> = ({ tasks, handleDelete }) => {
   return (
-    <div className="mt-6">
+    <div className="mt-6 max-h-96 overflow-y-scroll scrollbar-none"> 
       {/* Conditional rendering for empty list */}
       {!tasks.length ? (
         <p className="text-gray-500 text-center">No tasks available. Add tasks to your to-do list.</p>
