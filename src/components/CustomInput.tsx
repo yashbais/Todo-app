@@ -18,7 +18,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
   error,
 }) => {
   return (
-    <div className="mb-4">
+    <div className="mb-4 w-full">
       <input
         type={type}
         placeholder={placeholder}

@@ -1,9 +1,9 @@
-import Layout from "./components/Layout";
+import Todo from "./components/Todo";
 
 export default function App() {
   return (
     <div className="py-10">
-      <Layout />
+      <Todo />
     </div>
   );
 }
